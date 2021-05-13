@@ -1,0 +1,15 @@
+$primary-color: #070404;
+$second-color: #131414;
+$third-color: #343746;
+$forth-color: #a7a8ad;
+$fifth-color: #5f658d;
+$sixth-color: #f1ede9;
+$seventh-color: #a25d60;
+$theme-color: #dd0510;
+$text-color: #fff;
+
+@mixin Container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+}
