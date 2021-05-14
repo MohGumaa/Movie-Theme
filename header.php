@@ -10,13 +10,19 @@
 </head>
 <body>
 
+    <div class="menu-btn">
+        <i class="fas fa-bars fa-2x"></i>
+    </div>
+
     <!-- Header Section -->
     <header class="d-flex justify-content-between align-items-center">
         <div class="logo">
-            <img 
-                src="<?php echo get_template_directory_uri() . '/assets/images/Logo.png';?>" 
-                alt="<?php bloginfo('name')?>"
-            >
+            <a href="<?php echo home_url(); ?>">
+                <img 
+                    src="<?php echo get_template_directory_uri() . '/assets/images/Logo.png';?>" 
+                    alt="<?php bloginfo('name')?>"
+                >
+            </a>
         </div>
 
         <?php
