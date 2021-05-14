@@ -18,8 +18,11 @@
 
     // Add Theme Style
     function movietheme_style() {
-        wp_enqueue_style('main', get_template_directory_uri() . '/assets/css/main.css', [], false, 'all');
+        
+        wp_enqueue_style('slider','https://unpkg.com/swiper/swiper-bundle.css');
+        wp_enqueue_style('swiper' ,'https://unpkg.com/swiper/swiper-bundle.min.css');
         wp_enqueue_style('font-awesome-free', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
+        wp_enqueue_style('main', get_template_directory_uri() . '/assets/css/main.css', [], false, 'all');
     }
 
     add_action('wp_enqueue_scripts', 'movietheme_style');
@@ -28,6 +31,8 @@
     function movietheme_script() {
 
         wp_enqueue_script('jquery');
+        wp_enqueue_script('swiper', 'https://unpkg.com/swiper/swiper-bundle.js');
+        wp_enqueue_script('swiper-min', 'https://unpkg.com/swiper/swiper-bundle.min.js');
         wp_enqueue_script('main', get_template_directory_uri() . '/assets/js/main.js', 'jquery', false, true);
     }
 
