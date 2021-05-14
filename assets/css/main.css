@@ -10842,6 +10842,8 @@ body {
   font-family: "Poppins", sans-serif;
   font-size: 15px;
   line-height: 1.5;
+  background-color: #070404;
+  color: #fff;
 }
 
 ul {
@@ -10865,14 +10867,26 @@ img {
      object-fit: contain;
 }
 
+.menu-btn {
+  position: absolute;
+  cursor: pointer;
+  top: 20px;
+  right: 30px;
+  z-index: 2;
+  display: none;
+}
+
 header {
   background-color: #131414;
-  color: #fff;
-  height: 60px;
-  padding: 1.2rem 3rem;
+  min-height: 70px;
+  padding: 0.5rem 3rem;
 }
 header .logo {
   width: 220px;
+  transition: width 1s ease-in-out;
+}
+header .logo:hover {
+  width: 150px;
 }
 header .menu-main-menu-container {
   flex: 1;
@@ -10906,4 +10920,87 @@ header .right-menu li:first-child {
 }
 header .right-menu li:last-child {
   padding-right: 0;
+}
+
+.swiper-container {
+  height: 500px;
+}
+.swiper-container .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  position: relative;
+}
+.swiper-container .swiper-slide::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  box-shadow: inset 120px 100px 250px #000000, inset -120px -100px 250px #000000;
+}
+.swiper-container .swiper-slide h1, .swiper-container .swiper-slide .h1 {
+  position: relative;
+  z-index: 2;
+  padding-bottom: 5rem;
+}
+
+@media screen and (max-width: 768px) {
+  .menu-btn {
+    display: block;
+  }
+
+  header .menu-main-menu-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #f1ede9;
+    width: 50%;
+    height: 100%;
+    border-right: 1px solid #343746;
+    opacity: 0.9;
+    margin-left: 0;
+    padding: 30px;
+    transform: translateX(-500px);
+    transition: transform 0.5s ease-in-out;
+    z-index: 5;
+  }
+  header .menu-main-menu-container .main-menu {
+    display: block;
+  }
+  header .menu-main-menu-container .main-menu li {
+    padding: 1rem 0 0.7rem;
+    font-size: 14px;
+    border-bottom: 1px dotted #131414;
+  }
+  header .menu-main-menu-container .main-menu li:last-child {
+    border-bottom: 0;
+  }
+  header .menu-main-menu-container .main-menu li a {
+    color: #070404;
+    padding: 0;
+  }
+  header .menu-main-menu-container .main-menu li a:hover {
+    color: #343746;
+    border-bottom: 0;
+  }
+  header .menu-main-menu-container.show {
+    transform: translateX(0px);
+  }
+  header .right-menu {
+    margin-right: 2rem;
+  }
+}
+@media screen and (max-width: 500px) {
+  header {
+    padding: 1rem;
+  }
+  header .menu-main-menu-container {
+    width: 70%;
+  }
+  header .right-menu {
+    display: none !important;
+  }
 }
