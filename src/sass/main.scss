@@ -7,7 +7,7 @@ body {
   font-size: 15px;
   line-height: 1.5;
   background-color: $primary-color;
-  color: $text-color;
+  color: $sixth-color;
 }
 
 ul {
@@ -40,6 +40,7 @@ img {
 }
 
 header {
+  width: 100%;
   background-color: $second-color;
   min-height: 70px;
   padding: 0.5rem 3rem;
@@ -115,14 +116,122 @@ header {
       width: 100%;
       height: 100%;
       background: rgba(0, 0, 0, 0.6);
-      box-shadow: inset 120px 100px 250px #000000,
-        inset -120px -100px 250px #000000;
+      box-shadow: inset 0px 0px 0px #000000, inset -120px -100px 250px #000000;
     }
 
     h1 {
       position: relative;
       z-index: 2;
       padding-bottom: 5rem;
+    }
+  }
+}
+
+.tabs {
+  background-color: $second-color;
+  border-bottom: 3px solid $third-color;
+  padding-top: 1rem;
+
+  .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  & .container > div {
+    padding: 1rem 0;
+  }
+
+  & .container > div:hover {
+    color: $text-color;
+    cursor: pointer;
+  }
+
+  p {
+    font-size: 1.2rem;
+    padding-top: 0.5rem;
+  }
+
+  .tab-border {
+    border-bottom: 4px solid $theme-color;
+  }
+}
+
+#tab-1-content .tab-1-content-inner {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+#tab-2-content .tab-2-content-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+#tab-2-content .tab-2-content-bottom {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.table {
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.table thead th {
+  text-transform: uppercase;
+  padding: 0.8rem;
+  text-align: center;
+}
+
+.table tbody tr td {
+  color: $text-color;
+  padding: 0.8rem 1.2rem;
+  text-align: center;
+}
+
+.table tbody tr td:first-child {
+  text-align: left;
+}
+
+.table tbody tr:nth-child(odd) {
+  background-color: $second-color;
+}
+
+.footer {
+  max-width: 95%;
+  margin: 1rem auto;
+  overflow: hidden;
+  padding: 0 2rem;
+
+  a {
+    color: #999;
+    font-size: 0.9rem;
+  }
+  p {
+    margin-bottom: 1.5rem;
+  }
+
+  .footer-col {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2rem;
+
+    li {
+      line-height: 1.9;
     }
   }
 }
