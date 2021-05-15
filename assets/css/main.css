@@ -10838,12 +10838,72 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+/* Text Style */
+.text-xl {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.text-lg {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.text-md {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-dark {
+  color: #999;
+}
+
+/* Button */
+.btn {
+  display: inline-block;
+  background: #dd0510;
+  color: #fff;
+  padding: 0.4rem 1.3rem;
+  font-size: 1rem;
+  text-align: center;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+  border-radius: 2px;
+}
+
+.btn {
+  opacity: 0.9;
+}
+
+.btn-rounded {
+  border-radius: 5px;
+}
+
+.btn-xl {
+  font-size: 5rem;
+  padding: 1.5rem 2.1rem;
+  text-transform: uppercase;
+}
+
+.btn-xl {
+  font-size: 3rem;
+  padding: 0.8rem 1.3rem;
+  text-transform: uppercase;
+}
+
 body {
   font-family: "Poppins", sans-serif;
   font-size: 15px;
   line-height: 1.5;
-  background-color: #070404;
-  color: #fff;
+  background-color: #000;
+  color: #999;
 }
 
 ul {
@@ -10877,7 +10937,8 @@ img {
 }
 
 header {
-  background-color: #131414;
+  width: 100%;
+  background-color: #141414;
   min-height: 70px;
   padding: 0.5rem 3rem;
 }
@@ -10939,12 +11000,113 @@ header .right-menu li:last-child {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.6);
-  box-shadow: inset 120px 100px 250px #000000, inset -120px -100px 250px #000000;
+  box-shadow: inset 0px 0px 0px #000000, inset -120px -100px 250px #000000;
 }
 .swiper-container .swiper-slide h1, .swiper-container .swiper-slide .h1 {
   position: relative;
   z-index: 2;
   padding-bottom: 5rem;
+}
+
+.tabs {
+  background-color: #141414;
+  border-bottom: 3px solid #343746;
+  padding-top: 1rem;
+}
+.tabs .container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.tabs .container > div {
+  padding: 1rem 0;
+}
+.tabs .container > div:hover {
+  color: #fff;
+  cursor: pointer;
+}
+.tabs p {
+  font-size: 1.2rem;
+  padding-top: 0.5rem;
+}
+.tabs .tab-border {
+  border-bottom: 4px solid #dd0510;
+}
+
+#tab-1-content .tab-1-content-inner {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+#tab-2-content .tab-2-content-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+#tab-2-content .tab-2-content-bottom {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.table {
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.table thead th {
+  text-transform: uppercase;
+  padding: 0.8rem;
+  text-align: center;
+}
+
+.table tbody tr td {
+  color: #fff;
+  padding: 0.8rem 1.2rem;
+  text-align: center;
+}
+
+.table tbody tr td:first-child {
+  text-align: left;
+}
+
+.table tbody tr:nth-child(odd) {
+  background-color: #141414;
+}
+
+.footer {
+  max-width: 95%;
+  margin: 1rem auto;
+  overflow: hidden;
+  padding: 0 2rem;
+}
+.footer a {
+  color: #999;
+  font-size: 0.9rem;
+}
+.footer p {
+  margin-bottom: 1.5rem;
+}
+.footer .footer-col {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2rem;
+}
+.footer .footer-col li {
+  line-height: 1.9;
 }
 
 @media screen and (max-width: 768px) {
@@ -10956,7 +11118,7 @@ header .right-menu li:last-child {
     position: absolute;
     top: 0;
     left: 0;
-    background-color: #f1ede9;
+    background-color: #999;
     width: 50%;
     height: 100%;
     border-right: 1px solid #343746;
@@ -10973,13 +11135,13 @@ header .right-menu li:last-child {
   header .menu-main-menu-container .main-menu li {
     padding: 1rem 0 0.7rem;
     font-size: 14px;
-    border-bottom: 1px dotted #131414;
+    border-bottom: 1px dotted #141414;
   }
   header .menu-main-menu-container .main-menu li:last-child {
     border-bottom: 0;
   }
   header .menu-main-menu-container .main-menu li a {
-    color: #070404;
+    color: #000;
     padding: 0;
   }
   header .menu-main-menu-container .main-menu li a:hover {
