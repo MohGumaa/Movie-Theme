@@ -10,9 +10,9 @@
 </head>
 <body>
 
-    <div class="menu-btn">
+    <!-- <div class="menu-btn">
         <i class="fas fa-bars fa-2x"></i>
-    </div>
+    </div> -->
 
     <!-- Header Section -->
     <header class="d-flex justify-content-between align-items-center">
