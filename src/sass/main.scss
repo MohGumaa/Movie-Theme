@@ -4,50 +4,21 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.5;
   background-color: $primary-color;
-  color: $sixth-color;
-}
-
-ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-a {
   color: $text-color;
-  text-decoration: none;
-}
-
-a:hover {
-  color: $text-color;
-}
-
-img {
-  width: 100%;
-  object-fit: contain;
-}
-
-.menu-btn {
-  position: absolute;
-  cursor: pointer;
-  top: 20px;
-  right: 30px;
-  z-index: 2;
-  display: none;
 }
 
 header {
-  width: 100%;
   background-color: $second-color;
+  width: 100;
   min-height: 70px;
   padding: 0.5rem 3rem;
 
   .logo {
     width: 220px;
-    transition: width 1s ease-in-out;
+    transition: all 1s ease-in-out;
   }
 
   .logo:hover {
@@ -56,19 +27,14 @@ header {
 
   .menu-main-menu-container {
     flex: 1;
-    margin-left: 20px;
+    margin-left: 15px;
 
     .main-menu {
       display: flex;
-      align-items: center;
-    }
-
-    .main-menu li {
-      position: relative;
     }
 
     .main-menu li a {
-      padding: 0 10px 3px;
+      padding: 0 0.8rem 0.1rem;
     }
 
     .main-menu li a:hover {
@@ -85,16 +51,7 @@ header {
   }
 
   .right-menu li {
-    padding: 0.75rem;
-    cursor: pointer;
-  }
-
-  .right-menu li:first-child {
-    padding-left: 0;
-  }
-
-  .right-menu li:last-child {
-    padding-right: 0;
+    padding: 0 0.8rem 0.1rem;
   }
 }
 
@@ -105,136 +62,53 @@ header {
   .swiper-slide {
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
     position: relative;
 
     &::after {
-      content: '';
       position: absolute;
+      content: '';
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.6);
-      box-shadow: inset 0px 0px 0px #000000, inset -120px -100px 250px #000000;
+      background: rgba(0, 0, 0, 0.5);
+      box-shadow: 0 -10px 10px -10px #000000;
     }
 
-    h1 {
+    h3 {
       position: relative;
       z-index: 2;
-      padding-bottom: 5rem;
     }
   }
 }
 
+// Tabs Section
 .tabs {
-  background-color: $second-color;
-  border-bottom: 3px solid $third-color;
+  background: $second-color;
+  border-bottom: 3px solid $text-color;
   padding-top: 1rem;
 
   .container {
-    display: grid;
+    @include GridItem;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 1rem;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-  }
 
-  & .container > div {
-    padding: 1rem 0;
-  }
+    & > div {
+      padding: 1rem 0;
+    }
 
-  & .container > div:hover {
-    color: $text-color;
-    cursor: pointer;
-  }
+    & > div:hover {
+      color: $white-color;
+      cursor: pointer;
+    }
 
-  p {
-    font-size: 1.2rem;
-    padding-top: 0.5rem;
-  }
+    p {
+      font-size: 1.2rem;
+      padding-top: 0.5rem;
+    }
 
-  .tab-border {
-    border-bottom: 4px solid $theme-color;
-  }
-}
-
-#tab-1-content .tab-1-content-inner {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 2rem;
-  align-items: center;
-  justify-content: center;
-}
-
-#tab-2-content .tab-2-content-top {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  grid-gap: 1rem;
-  justify-content: center;
-  align-items: center;
-}
-
-#tab-2-content .tab-2-content-bottom {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 2rem;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-.table {
-  width: 100%;
-  margin-top: 2rem;
-}
-
-.table thead th {
-  text-transform: uppercase;
-  padding: 0.8rem;
-  text-align: center;
-}
-
-.table tbody tr td {
-  color: $text-color;
-  padding: 0.8rem 1.2rem;
-  text-align: center;
-}
-
-.table tbody tr td:first-child {
-  text-align: left;
-}
-
-.table tbody tr:nth-child(odd) {
-  background-color: $second-color;
-}
-
-.footer {
-  max-width: 95%;
-  margin: 1rem auto;
-  overflow: hidden;
-  padding: 0 2rem;
-
-  a {
-    color: #999;
-    font-size: 0.9rem;
-  }
-  p {
-    margin-bottom: 1.5rem;
-  }
-
-  .footer-col {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 2rem;
-
-    li {
-      line-height: 1.9;
+    .tab-border {
+      border-bottom: 4px solid $theme-color;
     }
   }
 }
-
-// Media Query
-@import 'mobile';
