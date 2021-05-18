@@ -4,9 +4,28 @@ $text-color: #999;
 $theme-color: #dd0510;
 $white-color: #fff;
 
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: $text-color;
+  text-decoration: none;
+}
+
+a:hover {
+  color: $text-color;
+}
+
+img {
+  width: 100%;
+  object-fit: cover;
+}
+
 @mixin GridItem {
   display: grid;
-  grid-gap: 1rem;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -33,14 +52,14 @@ $white-color: #fff;
 }
 
 .text-dark {
-  color: $text-color;
+  color: $white-color !important;
 }
 
 /* Button */
 .btn {
   display: inline-block;
   background: $theme-color;
-  color: $text-color;
+  color: $white-color;
   padding: 0.4rem 1.3rem;
   font-size: 1rem;
   text-align: center;
@@ -52,8 +71,9 @@ $white-color: #fff;
   border-radius: 2px;
 }
 
-.btn {
+.btn:hover {
   opacity: 0.9;
+  color: $white-color;
 }
 
 .btn-rounded {
@@ -70,26 +90,6 @@ $white-color: #fff;
   font-size: 3rem;
   padding: 0.8rem 1.3rem;
   text-transform: uppercase;
-}
-
-ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-a {
-  color: $text-color;
-  text-decoration: none;
-}
-
-a:hover {
-  color: $text-color;
-}
-
-img {
-  width: 100%;
-  object-fit: contain;
 }
 
 // Media Query Mixin
