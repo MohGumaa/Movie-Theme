@@ -1,20 +1,49 @@
 <?php
+    /**
+     *  Move Theme's functions and definitions
+     */
 
-    // Add Theme Support
-    function movietheme_support() {
-        add_theme_support('title-tag');
-        add_theme_support('menus');
-    }
+    /**
+     * Set the maximum content width based on the theme's design and stylesheet.
+     * This will limit the width of all uploaded images and embeds.
+     */
+    if ( ! isset( $content_width ) )
+        $content_width = 800; /* pixels */
 
-    add_action('after_setup_theme', 'movietheme_support');
+    if (! function_exists('movietheme_setup')) :
 
-    // Menus Location
-    register_nav_menus (
-        array(
-            'primary-menu' => __('Primary Menu Desktop'),
-            'mobile-menu' => __('Mobile Menu')
-        )
-    );
+        /** 
+         * Sets up theme defaults and registers support for various Wordpress 
+         * Features.
+         * 
+         * Hooked after setup theme which run before init hook
+         * where init is late for post thumbnails
+        */
+
+        function movietheme_setup() {
+
+            // Make Theme available for translations
+            load_theme_textdomain( 'myfirsttheme', get_template_directory() . '/languages' );
+            add_theme_support( 'automatic-feed-links' );
+            add_theme_support('title-tag');
+            add_theme_support( 'post-thumbnails' );
+            // add_theme_support('menus'); // check if is not there
+
+            // Post Format
+            add_theme_support( 'post-formats',  array ( 'aside', 'gallery', 'quote', 'image', 'video' ) );
+
+            // Menus Location
+            register_nav_menus (
+                array(
+                    'primary-menu' => __('Primary Menu Desktop', 'movietheme' ),
+                    'mobile-menu' => __('Mobile Menu', 'movietheme')
+                )
+            );
+        }
+
+    endif;
+
+    add_action('after_setup_theme', 'movietheme_setup');
 
     // Add Theme Style
     function movietheme_style() {
